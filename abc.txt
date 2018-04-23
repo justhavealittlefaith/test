@@ -1,6 +1,5 @@
 abc
-<<<<<<< HEAD
+
 diu diu diu
-=======
+
 apple banana cat
->>>>>>> 981ce510b818fe2826cacdc689dec90d8a7fb47a
