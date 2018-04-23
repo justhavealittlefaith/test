@@ -1,0 +1,60 @@
+@charset "utf-8";
+			*{
+	/* [disabled]padding: 0px; */
+	/* [disabled]margin: 0px; */
+}
+#boxgridBeta      .boxgrid h3{
+	margin: 10px 10px 0 10px;
+	color: #FFF;
+	letter-spacing: -1px;
+	font-weight: bold;
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+}
+
+			
+			.boxgrid{
+	width: 125px;
+	height: 100px;
+	margin: 10px;
+	float: left;
+	background: #161613;
+	border: 2px solid #624825;
+	overflow: hidden;
+	position: relative;
+	text-align: left;
+			}
+
+				.boxgrid img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 0;
+				}
+				.boxgrid p{ 
+					padding: 0 10px; 
+					color:#afafaf; 
+					font-weight:bold; 
+					font:10pt "Lucida Grande", Arial, sans-serif; 
+				}
+				
+			.boxcaption{ 
+				float: left; 
+				position: absolute; 
+				background: #000; 
+				height: 100px; 
+				width: 100%; 
+				opacity: .8; 
+				/* For IE 5-7 */
+				filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+				/* For IE 8 */
+				-MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+ 			}
+ 				.captionfull .boxcaption {
+ 					top: 260;
+ 					left: 0;
+ 				}
+ 				.caption .boxcaption {
+ 					top: 220;
+ 					left: 0;
+ 				}

@@ -1,0 +1,15 @@
+<header id="top" th:fragment="protoNavFragm">
+	<div id="loader"></div>
+	<h1><a href='#top' scrollto><img th:src="@{${logoImgSrc}}" alt=''/></a></h1>
+	<nav id='mainnav'> 
+		<form th:action="@{/login}" method='post'>
+			<a href="javascript:;" onclick="parentNode.submit();"><span th:text="${contentWelcome} + ' ' + ${username}"/></a>
+			<input type="hidden" name="welcome" value="dummy">
+			<input type="hidden" name="languageOnCurrentPage" th:value="${languageOnCurrentPage}">
+		</form>
+			
+		<form th:action="@{/logout}" method='post'>
+			<a href="javascript:;" onclick="parentNode.submit();"><span th:text="${contentLogout}" /></a>
+		</form>
+	</nav>
+</header>

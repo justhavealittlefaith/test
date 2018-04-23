@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<div th:replace="head_style :: headFragm">
+	<title id="headSupplement">Ultnema | Payment Done</title>
+</div>
+
+<body>
+	<div th:replace="protoNav :: protoNavFragm"></div>
+	<div id='protoWrapper'>
+		<div id='newRelease'>
+			<form th:action="@{login}" method="post">
+				<article><h3><span th:text="${contentProtoPaymentDonePaymentDetail}" />: <font color='red'>*<span th:text="${contentProtoPlayingCautionMsg}" /></font></h3>
+					<ul>
+						<li><span th:text="${contentProtoPaymentDonePayerName}" />: </li>
+						<li><span th:text="${firstname} + ' ' + ${lastname}" /> </li>
+					</ul>
+					<ul>
+						<li><span th:text="${contentProtoPaymentDonePaid}" />: </li>
+						<li>HKD <span th:text="${amount}" /></li>
+					</ul>
+					<ul>
+						<li><span th:text="${contentProtoPaymentMovie}" />: </li>
+						<li><span th:text="${yourMovie}" /></li>
+					</ul>
+					<ul>
+						<li><span th:text="${contentProtoPaymentCurrentPrice}" />: </li>
+						<li>HKD <span th:text="${yourPriceHKD}" /></li>
+					</ul>
+					<ul>
+						<li><font color='#E74E1B'><span th:text="${contentProtoPaymentDoneMsg}" /></font></li>
+						<li>
+							<input type="submit" name="submitPayment" value="Go!" class="btn">
+							<input type="hidden" name="playing" value="dummy">
+							<input type="hidden" name="languageOnCurrentPage" th:value="${languageOnCurrentPage}">
+							<input type="hidden" name="movieID" th:value="${movieID}">
+						</li>
+					</ul>
+				</article>
+			</form>
+		</div>
+
+		<div th:replace="footer :: footerFragm"></div>
+	</div>
+</body>
+</html>

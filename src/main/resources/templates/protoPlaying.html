@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<div th:replace="head_style :: headFragm">
+	<title id="headSupplement">Ultnema | Playing</title>
+	<link id="headSupplement" href="styles/style_videoUI.css" rel="stylesheet" type="text/css">
+</div>
+
+<body>
+	<div th:replace="protoNav :: protoNavFragm"></div>
+	<div id='protoWrapper'>
+		<div id='video'>
+			<article>
+				<a>
+					<h3 class="movieName"><span th:text="${yourMovie}" /></h3>
+					<div class="movieContent">
+						<font color=red><span th:text="${contentProtoPlayingCautionMsg}" /></font>
+						<h4><span th:text="${contentProtoPlayingStartTime}" />: <span id='spanStartTime'></span></h4>
+						<h4><span th:text="${contentProtoPlayingTimeAllowedMsg}" />: <span id='timeAllowed'>(<span th:text="${contentProtoPlayingMovieLength}" /> + 30)</span></h4>
+						<h4><span th:text="${contentProtoPlayingLogoutMsg}" /></h4>
+					</div>
+				</a>
+				<ul>
+					<li>
+						<div id='videoContainer'>
+							<video id='video1' class='classVideo1ForProto' width='820'>
+								<source th:src="@{${videoSrcLink}}" type="video/mp4">   
+								<p>Your browser doesn't support HTML5 video.</p>
+							</video>
+							<div id="videoControls">
+								<div class='play'></div>
+								<div class='pause' hidden></div>
+								<div id="buttonControls">
+									<button id='play' class='btn'>
+										<span id='spanPlay'><span th:text="${contentProtoPlayingPlay}" /></span>
+										<span id='spanPause' hidden><span th:text="${contentProtoPlayingPause}" /></span>
+									</button>
+									<span id="divDuration" class="btn">
+										<span id="duration">00:00 / </span> <span id="spanMovieLength">00:00</span>
+									</span>
+									<button id='fullScreen' class='btn'><span th:text="${contentProtoPlayingFullScreen}" /></button>
+									<input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+								</div>
+							</div>				
+						</div>
+					</li>
+				</ul>
+			</article>
+		</div> 
+
+		<script language="JavaScript" src="js/videoUI.js"></script>
+
+		<div class="explainBox">The movie is supposed to have full length in official operation.</div>
+
+		<div th:replace="footer :: footerFragm"></div>
+	</div>
+</body>
+</html>

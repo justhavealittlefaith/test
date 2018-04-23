@@ -1,0 +1,477 @@
+@charset "utf-8";
+
+
+/* The following one is for prohibition of text selection.
+*{
+-o-user-select: none;
+user-select: none;
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+
+/* The following two css is about making the images non draggable but making those images with hyperlink draggable again.
+img {
+    pointer-events: none;
+}
+
+#top img, #comparison img, footer img {
+    pointer-events: auto;
+}
+
+*/
+
+.scrolltop {
+	display: none;
+	background-repeat: no-repeat;
+	background-image: url(../images/scrolltop.png);
+	width: 72px;
+	height: 72px;
+	position: fixed;
+	right: 90px;
+	bottom: 60px;
+	cursor: pointer;
+	opacity: 0.5;
+	z-index:999;
+}
+.scrolltop:hover {
+	background-image: url(../images/scrolltop.png);
+	opacity: 1;
+}
+
+
+div {
+	/* [disabled]-webkit-box-shadow: 0px 0px 10px 4px #282A29; */
+	/* [disabled]box-shadow: 0px 0px 10px 4px #282A29; */
+}
+img, object   {
+	-webkit-box-shadow: 0px 0px 10px 4px #282A29;
+	box-shadow: 0px 0px 10px 4px #282A29;
+	margin-top: 5%;
+	
+
+}
+
+body {
+	margin: 0px;
+	color: #282A29;
+	font-style: normal;
+	font-weight: 600;
+	font-family: source-sans-pro;
+	background-repeat: repeat-y;
+	/* [disabled]background-image: url(../images/BodyBG.jpg); */
+}
+
+article {
+	width: 36%;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: #282A29;
+	line-height: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 5%;
+	/* [disabled]border-bottom: thin solid #ECECEC; */
+	/* [disabled]border-right: thin solid #ECECEC; */
+	border-left: thin solid #ECECEC;
+}
+
+
+
+
+
+h2  {
+	font-size: 50pt;
+	margin-top: 2%;
+	line-height: 80%;
+	margin-bottom: -0.5%;
+	border-bottom: thin solid #ECECEC;
+
+}
+h3 {
+	border-bottom: thin solid #ECECEC;
+}
+
+
+
+ul {
+	margin-left: -25px;
+}
+
+#referto2 ul li{
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	display: inline-table;
+	font-size: x-large;
+
+}
+#referto2 ul {
+	display: block;
+}
+
+article, footer, nav, header {
+	display: block;
+}
+
+#wrapper {
+	width: 100%;
+	min-width: 740px;
+	margin-left: 0px;
+	margin-right: 0px;
+	max-width: 100%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#top {
+	overflow: hidden;
+
+	background-size: 100%
+%;
+	width: 100%;
+	border-bottom: thin solid #ECECEC;
+	/* [disabled]border-bottom-color: #ECECEC; */
+	margin-top: -12px;
+	position: fixed;
+	z-index: 999;
+	background-color: #FFFFFF;
+}
+#top img  {
+	float: left;
+	width: 15%;
+	-webkit-box-shadow: 0px 0px 0px 0px;
+	box-shadow: 0px 0px 0px 0px;
+	margin-left: 2%;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-bottom: 0%;
+
+}
+#hero {
+	position: relative;
+	clear: left;
+	border-bottom: 0px none 0;
+	padding-left: 0%;
+	padding-right: 0%;
+}
+#hero article {
+	position: absolute;
+	width: 36%;
+	right: 5%;
+	color: #FFFFFF;
+	text-align: left;
+	top: 10%;
+}
+
+
+#hero #slogan {
+	text-align: right;
+}
+
+#hero img {
+	margin-bottom: 0%;
+	-webkit-box-shadow: 0px 0px 0px 0px;
+	box-shadow: 0px 0px 0px 0px;
+	width: 100%;
+	margin-top: 0%;
+	margin-right: 0%;
+	margin-left: 0%;
+
+}
+#hero #paysystem {
+	position: absolute;
+	right: 2%;
+	width: 15%;
+	bottom: 7%;
+}
+#hero #platform {
+	opacity: 0.5;
+}
+
+/*-----------------------------------------------*/
+/*Promotion video*/
+/* Style the video: 100% width and height to cover the entire window */
+/* #promoVideo { */
+    /* position: relative; */
+	/* padding-top: 6%; */
+	/* padding-left: 6%; */
+	/* padding-right: 6%; */
+    /* padding-bottom: 6%; */
+    /* min-width: 50%;  */
+    /* min-height: 50%; */
+/* } */
+
+/* Add some content at the bottom of the video/page */
+.promoContent {
+    position: fixed;
+    bottom: 10%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 10px;
+	text-align: center;
+	z-index:999;
+}
+
+/* Style the button used to pause/play the video */
+.protoBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.protoBtn:hover {
+    background: #ddd;
+    color: black;
+}
+/*Promotion video*/
+/*-----------------------------------------------*/
+
+#beyondhero {
+	padding-top: 10%;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
+}
+.floatleft {
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.floatright {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0px;
+}
+footer {
+	color: #ADB1AF;
+	background-color: #FFFFFF;
+	width: 100%;
+	padding-top: 3%;
+	padding-bottom: 5%;
+}
+#footernav {
+	width: 60%;
+	margin-left: 20%;
+}
+
+#footernav a  {
+	border-right: thin solid #ECECEC;
+	padding-right: 2%;
+	padding-left: 2%;
+}
+
+footer img {
+	width: 15%;
+	margin-left: 2%;
+	float: left;
+	margin-right: 0%;
+	margin-top: 0%;
+	margin-bottom: 0%;
+	-webkit-box-shadow: 0px 0px 0px 0px;
+	box-shadow: 0px 0px 0px 0px;
+}
+footer p {
+	margin-left: 2%;
+}
+
+
+
+
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #ADB1AF;
+}
+
+#mainnav {
+	margin-left: 38%;
+	width: 60%;
+	position: relative;
+
+}
+
+#mainnav ul {
+	list-style-type: none;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+#mainnav a {
+	width: 20%;
+	display: block;
+	float: left;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 1.5% 13px 13px;
+	background-color: #FFFFFF;
+}
+#mainnav a:hover, #mainnav a:active, #mainnav a:focus, #mainnav a.thispage    {
+	/* [disabled]background-color: #C0C2C1; */
+	text-decoration: none;
+
+}
+#mainnav p {
+	text-align: right;
+	color: #ADB1AF;
+	position: absolute;
+	right: 0%;
+}
+
+
+#product {
+	position: relative;
+	/* [disabled]border-bottom: thin solid #ECECEC; */
+}
+#product article {
+	position: absolute;
+	left: 60%;
+}
+
+#product img {
+	width: 49%;
+	margin-left: 5%;
+	margin-bottom: 10%;
+	border-radius: 31px;
+}
+#referto1 , #referto2{
+	color: #FFFFFF;
+	text-align: center;
+	padding-right: 6%;
+	padding-top: 6%;
+	padding-bottom: 6%;
+	padding-left: 6%;
+}
+#referto1 {
+	background-color: #E74E1B;
+}
+#referto2 {
+	background-color: #282A29;
+}
+#referto2 a {
+	color: #FFFFFF;
+	font-size: xx-large;
+}
+#referto1 a {
+	color: #FFFFFF;
+}
+
+
+
+
+
+#works {
+	position: relative;
+}
+#works article {
+	position: absolute;
+	left: 60%;
+}
+
+#works img {
+	width: 49%;
+	margin-left: 5%;
+	margin-bottom: 10%;
+	border-radius: 31px;
+}
+#customers {
+	position: relative;
+}
+#customers article {
+	position: absolute;
+	left: 60%;
+}
+#customers img {
+	margin-left: 5%;
+	width: 49%;
+	margin-bottom: 10%;
+	border-radius: 31px;
+}
+#team {
+	position: relative;
+	height: 900px;
+}
+#boxgrid {
+	position: absolute;
+	top: 20%;
+	padding-top: 10%;
+	padding-left: 5%;
+
+}
+#hero .slideshow .carousel .slide #boxgridBeta {
+	position: absolute;
+	bottom: 2%;
+	left: 10%;
+}
+
+
+
+
+
+#team article {
+	position: absolute;
+	left: 5%;
+}
+#team img {
+	margin-top: 0%;
+}
+
+#contact   {
+	position: relative;
+}
+
+#contact article {
+	position: absolute;
+	left: 60%;
+	color: #FFFFFF;
+}
+#contact img {
+	width: 100%;
+	margin-bottom: 0%;
+	margin-top: 0%;
+	-webkit-box-shadow: 0px 0px 0px 0px;
+	box-shadow: 0px 0px 0px 0px;
+}
+
+
+/* Center the loader */
+#loader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #E74E1B;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

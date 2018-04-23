@@ -1,0 +1,156 @@
+body {
+    margin: 0 auto;
+	position: relative;
+}
+
+input[type="text"] ,input[type="password"] {
+    height: 45px;
+    width: 300px;
+    font-size: 18px;
+    border-style: solid;
+	margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+.btn{
+    padding: 15px 30px;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    background-color: #E74E1B;
+    border-bottom: 4px solid #ADB1AF;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.paymMethod1, .paymMethod2{
+	width: 500px; only for IE8
+	height: 300px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 4px solid #ADB1AF;
+    margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #fff;
+	opacity: 0.5;
+}
+
+.paymMethod1:hover, .paymMethod2:hover {
+    opacity: 1;
+}
+
+.paymMethod1{
+    background-image: url("../images/protoImages/Proto_Paypal.png");
+}
+
+.paymMethod2{
+    background-image: url("../images/protoImages/Proto_octocheck.png");
+}
+
+
+#protoWrapper{
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 50px;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+#protoWrapper ul li{
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: -10px;
+	display: inline-table;
+}
+#protoWrapper ul{
+	display: block;
+}
+
+#protoWrapper #protoFront ul li{
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: -10px;
+	display: table;
+	font-size: large;
+}
+#protoWrapper #protoFront ul {
+	display: block;
+}
+
+#protoWrapper article {
+	width: auto;
+}
+
+th, td{
+	padding: 15px;
+}
+
+select{
+    padding: 15px 30px;
+    border-radius:10px;
+    border-bottom: 4px solid #ADB1AF;
+    margin-bottom: 10px;
+	-webkit-border-radius:10px;
+    -moz-border-radius:10px;
+	font-size: 18px;
+}
+
+#Proto_guide{
+	position: absolute;
+	left: 50%;
+	top: 20%;
+	bottom: 10%;
+
+}
+
+.explainBox img{
+	display: block;
+	background-repeat: no-repeat;
+	width: 18%;
+	height: 18%;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+.explainBox img:hover {
+	background-image: url(../images/protoImages/Proto_Prog_p.jpg);
+	opacity: 1;
+}
+
+.explainBox{
+	display: block;
+	background-repeat: no-repeat;
+	width: 18%;
+	height: 18%;
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	cursor: pointer;
+	opacity: 0.5;
+}
+.explainBox:hover {
+	opacity: 1;
+}
+
+.movieContent{
+	display: none;
+	background:white;
+	height:auto;
+	width:auto;
+	position:absolute;
+	padding: 2%;
+	border: thin solid #ECECEC;
+	z-index:2;
+}
+.movieName{
+	cursor: pointer;
+}

@@ -1,0 +1,145 @@
+
+#videoContainer{
+	position:relative;
+	z-index:1;
+}
+
+#videoControls {
+  position: absolute;
+  /* height: 1%; */
+  /* same as the width of #video1 */
+  /* width: 820px; */
+	width: 50%;
+	left: 25%;
+  /* top: 88%; */
+  bottom: 0;
+  /* display:none; */
+  /* padding: 25px; */
+  margin: 15px;
+  /* border: thin solid #ECECEC; */
+  /* z-index: 2147483648; */
+}
+.btn{
+	padding: 5px 10px;
+	font-size: 15px;
+	/* color: #ECECEC; */
+	/* background-color: #fff; */
+	border-bottom: 0;
+}
+
+.play {
+	position: absolute;
+	top: -550%;
+	left: 45%;
+	opacity: 0.3;
+	
+	width: 0; 
+	height: 0; 
+	border-top: 37px solid transparent;
+	border-bottom: 37px solid transparent;
+	border-left: 74px solid #E74E1B;
+	/* padding-right: 200x; */
+	border-radius: 10px;
+}
+.pause {
+	position: absolute;
+	top: -550%;
+	left: 46%;
+	opacity: 0.3;
+	
+	width: 74px;
+	height: 74px;
+	border-style: double;
+	border-width: 0px 0px 0px 37px;
+	border-color: #E74E1B;
+	border-radius: 10px;
+}
+
+.play:hover{
+	opacity: 1;
+}
+.pause:hover{
+	opacity: 1;
+}
+
+
+
+/*
+#progress {
+  width: 10%;
+  position: absolute;
+  top: -10px;
+  -webkit-appearance: none;
+  background-color: #ff9900;
+  height: 25px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#progressBar {
+  width: 98.5%;
+  position: absolute;
+  top: -10px;
+  right: 1%;
+  -webkit-appearance: none;
+  background-color: #6d6e6d;
+  height: 25px;
+  z-index: 0;
+}
+*/
+
+#progressBar:focus { outline: none; }
+#progressBar::-webkit-slider-thumb {
+ -webkit-appearance: none !important;
+ height: 0;
+ width: 0;
+}
+#progressBar::-moz-range-thumb {
+ visibility: hidden !important;
+}
+
+#videoContainer:hover #buttons { opacity: 1.0; }
+
+#closedCaption, #fullScreen, #volumeBar { float: right; }
+
+#volumeSlider {
+  width: 80px;
+  height: 30px;
+  float: right;
+}
+#volumeSlider::-webkit-slider-thumb {
+ /* background-color: #E74E1B; */
+ height: 10px;
+ width: 10px;
+}
+
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+video::-moz-media-controls-enclosure {
+  display:none !important;
+}
+video::-ms-media-controls-enclosure {
+  display:none !important;
+}
+video::-o-media-controls-enclosure {
+  display:none !important;
+}
+video::media-controls-enclosure {
+  display:none !important;
+}
+
+
+
+/* #videoControls:-webkit-full-screen { */
+  /* width: 100% !important; */
+/* } */
+/* #videoControls:-moz-full-screen { */
+  /* width: 100% !important; */
+/* } */
+/* #videoControls:-ms-fullscreen { */
+  /* width: 100% !important; */
+/* } */
+/* #videoControls:fullscreen { */
+  /* width: 100% !important; */
+/* } */

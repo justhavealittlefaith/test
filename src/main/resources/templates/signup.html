@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html>
+<div th:replace="head_style :: headFragm">
+	<title id="headSupplement">Ultnema | Sign Up</title>
+</div>
+
+<body>
+
+<header id="top">
+	<div id="loader"></div>
+    <h1><a href="#top" scrollto><img src="images/Logo.png" alt="Home"/></a></h1>
+    <nav id="mainnav">
+		<ul>
+		<li><a href='$changeLang'><span th:text="${contentLang}" /></a></li> 
+		</ul>
+    </nav>
+</header>
+
+
+<div id='protoWrapper'>
+<div id='protoFront'>
+
+global $NewUserMsg, $SignUpErr;
+
+
+<article>
+<h3><span th:text="${contentSignUpHere}" /></h3>
+<ul>
+<li><font color = 'red'>* <span th:text="${contentSignUpRequiredField}" /></font>
+<p><span th:text="${contentSignUpInstruction}" /></p>
+</li>
+
+<li>
+<font color = 'red'><span th:text="${SignUpErr}" /></font><font color = 'green'><span th:text="${NewUserMsg}" /></font>
+</li>
+
+<form method='post' id='myForm' action='$signUpSrcLink'>
+
+<li><span th:text="${contentLoginUsername}" /><br>
+<input type='text' name='username' placeholder='$contentSignUpUsernamePlaceholder' onchange=\"checkIfDuplicate(this.name,this.value,'$languageOnCurrentPage')\">
+<font color = 'red'>*<span id='spanNameErr'></span></font>
+</li>
+
+<li><span th:text="${contentSignUpEmail}" /><br>
+<input type='text' name='email' placeholder='$contentSignUpEmailPlaceholder' onchange=\"checkIfDuplicate(this.name,this.value,'$languageOnCurrentPage')\">
+<font color = 'red'>*<span id='spanEmailErr'></span></font>
+</li>
+
+<li><span th:text="${contentSignUpPassword}" /><br>
+<input type='password' id='passID' name='pass' placeholder='$contentSignUpPasswordPlaceholder' onchange=\"checkIfDuplicate(this.name,this.value,'$languageOnCurrentPage')\">
+<font color = 'red'>*<span id='spanPassErr'></span></font>
+</li>
+
+<li><span th:text="${contentSignUpConfirmPassword}" /><br>
+<input type='password' name='cpass' placeholder='$contentSignUpConfirmPasswordPlaceholder' onchange=\"checkIfDuplicate(this.name,this.value,'$languageOnCurrentPage')\">
+<font color = 'red'>*<span id='spanCPassErr'></span></font>
+</li>
+
+<li>
+<input type='submit' id='mySubmit' name='submit' value='$contentSubmit' class='btn'><br>
+<a href='$loginSrcLink'><span th:text="${contentSignUpGoBackToLoginPage}" /></a>
+</li>
+</form>
+</article>
+
+
+</div>
+	
+<div th:replace="footer :: footerFragm"></div>
+
+</div>
+
+<script>
+var isLegalEntryObj = {
+			usernameHasLegalEntry:false,
+			emailHasLegalEntry:false,
+			passHasLegalEntry:false,
+			cpassHasLegalEntry:false
+		};
+		
+$(document).ready(function () {
+    $("#myForm").submit(function () {
+		if(isLegalEntryObj.usernameHasLegalEntry && isLegalEntryObj.emailHasLegalEntry && isLegalEntryObj.passHasLegalEntry && isLegalEntryObj.cpassHasLegalEntry){
+			return true;
+		}else{
+			return false;
+		}
+    });
+});
+
+function checkIfDuplicate(checkedFieldName, checkedFieldUserEntry, languageOnCurrentPage){
+	//create an object for JSON object to be sent later
+	var checkedObj = {
+			fieldName:checkedFieldName,
+			userEntry:checkedFieldUserEntry,
+			passwordField:"",
+			passwordFieldUserEntry:""
+		};
+	//send pass's field user entry for cpass's checking
+	if(checkedFieldName == 'cpass'){
+		checkedObj.passwordField = document.getElementById("passID").name;
+		checkedObj.passwordFieldUserEntry = document.getElementById("passID").value;
+	}
+	//make javascript object a JSON object
+	var checkedJsonObj = JSON.stringify(checkedObj);
+
+	if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				//response from checking page
+				var returnedObj = JSON.parse(this.responseText);			
+				if(returnedObj.fieldName == 'username'){
+					output("spanNameErr", returnedObj.responseText);
+					if(returnedObj.hasLegalEntry){
+						isLegalEntryObj.usernameHasLegalEntry = true;
+					}
+				}
+				if(returnedObj.fieldName == 'email'){
+					output("spanEmailErr", returnedObj.responseText);
+					if(returnedObj.hasLegalEntry){
+						isLegalEntryObj.emailHasLegalEntry = true;
+					}
+				}
+				if(returnedObj.fieldName == 'pass'){
+					output("spanPassErr", returnedObj.responseText);
+					if(returnedObj.hasLegalEntry){
+						isLegalEntryObj.passHasLegalEntry = true;
+					}
+				}
+				if(returnedObj.fieldName == 'cpass'){
+					output("spanCPassErr", returnedObj.responseText);
+					if(returnedObj.hasLegalEntry){
+						isLegalEntryObj.cpassHasLegalEntry = true;
+					}
+				}
+            }
+        };
+		
+		xmlhttp.open("POST","response.php",true);
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send("checkedObj=" + checkedJsonObj + "&language=" + languageOnCurrentPage);
+}
+//for cleaner output code
+function output(elementID, innerHtmlText){
+	document.getElementById(elementID).innerHTML = innerHtmlText;
+}
+</script>
+
+</body>
+</html>

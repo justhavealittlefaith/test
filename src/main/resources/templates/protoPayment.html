@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<div th:replace="head_style :: headFragm">
+	<title id="headSupplement">Ultnema | Payment</title>
+</div>
+
+<body>
+	<div th:replace="protoNav :: protoNavFragm"></div>
+	<div id='protoWrapper'>
+		<div id='newRelease'>
+			<form th:action="@{${paypalFormURL}}" method='post' target='_top'>
+				<input type='hidden' name='cmd' value='_s-xclick'>
+				<article>
+					<h3>
+						<span th:text="${contentYourChoice}" />: <font color='red'>*<span th:text="${contentProtoPaymentCautionMsg}" /> 10</font>
+					</h3>
+					<ul>
+						<li><span th:text="${contentProtoPaymentMovie}" />: </li>
+						<li><span th:text="${movieName}" /></li>
+					</ul>
+					<ul>
+						<li><span th:text="${contentProtoPaymentCurrentPrice}" />: </li>
+						<li>HKD <span th:text="${priceHKD}" /> (<span th:text="${contentProtoPaymentPaypalServiceFee}" /> HKD (<span th:text="${paypalServiceFee}" />)</li>
+					</ul>
+					<ul>
+						<li><span th:text="${contentProtoPaymentFinalPrice}" />: </li>
+						<li>HKD <span th:text="${finalPrice}" /></li>
+					</ul>
+					<ul>
+						<li></li>
+						<li>
+							<input type="hidden" name="hosted_button_id" th:value="${paypal_hosted_button_value}">
+							<input type='image' th:src="@{${paypalImgSrc}}" border='0' name='submit' alt='PayPal – The safer, easier way to pay online!'>
+						</li>
+					</ul>
+				</article>
+			</form>
+		</div>
+		<div th:replace="footer :: footerFragm"></div>
+	</div>
+</body>
+</html>

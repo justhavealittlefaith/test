@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+
+<link rel="shortcut icon" href="images/Logo.png" type="image/x-icon"/>
+
+<title>Ultnema | Relocate cinemas's ecosystem to the internet</title>
+
+
+<!--CSS - Main-->
+<link href="styles/main.css" rel="stylesheet" type="text/css">
+
+<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
+<script>var __adobewebfontsappname__="dreamweaver"</script>
+<script src="http://use.edgefonts.net/source-sans-pro:n6,n2:default.js" type="text/javascript"></script>
+
+<!--JQuery-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!--JQuery - Scroll to top-->
+<script type="text/javascript">
+$(document).ready(function(){ 
+$(window).scroll(function(){
+if ($(this).scrollTop() > 80) {
+$(".scrolltop").fadeIn();
+} 
+else {
+$(".scrolltop").fadeOut();
+}
+});
+$(".scrolltop").click(function(){
+$("html, body").animate({ scrollTop: 0 }, 'slow');
+});
+});
+</script>
+
+<!--JQuery - Scroll to id-->
+<script type="text/javascript" src="js/jquery.malihu.PageScroll2id.min.js"></script>
+<script type="text/javascript">
+    (function($){
+        $(window).load(function(){
+            $("a[scrollto]").mPageScroll2id();
+        });
+    })(jQuery);
+</script>
+
+<!--CSS - Slideshow-->
+<link rel="stylesheet" href="styles/slideshow.css" />
+
+<!--JQuery - Slideshow-->
+	<script src="js/slideshow.js"></script>
+	<script>
+		$(function() {
+			// Create slideshow instances
+			var $s = $('.slideshow').slides();
+
+			// Access an instance API
+			var api = $s.eq(0).data('slides');
+
+			// Transition select
+			$('select[name=transition]').on('change', function() {
+				api.redraw( this.value );
+			});
+		});
+	</script>
+
+
+
+
+<!--CSS - Sliding boxes-->		
+	<link href="styles/sliding boxes.css" rel="stylesheet" type="text/css">
+
+
+<!--JQuery - Sliding boxes-->		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//To switch directions up/down and left/right just place a "-" in front of the top/left attribute
+
+				//Horizontal Sliding
+				$('.boxgrid.slideright').hover(function(){
+					$(".cover", this).stop().animate({left:'325px'},{queue:false,duration:300});
+				}, function() {
+					$(".cover", this).stop().animate({left:'0px'},{queue:false,duration:300});
+				});
+			});
+		</script>
+
+<!--[if lte IE 8]>
+
+<script type="text/javascript" src="js/html5shiv.js"></script>
+
+<![endif]-->
+
+<!--include main.js for loader's event-->
+<script type="text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+  <div id="loader"></div>
+  <header id="top">
+    <h1><a href="#top" scrollto><img src="images/Logo.png" alt="Home"/></a></h1>
+    <nav id="mainnav">
+      <ul>
+        <li><a href="#product" scrollto>Product</a></li>
+        <li><a href="#works" scrollto>How It Works</a></li>
+        <li><a href="#customers" scrollto> Customers</a></li>        
+        <li><a href="#team" scrollto>Team</a></li>
+        <li><a href="#contact" scrollto>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<div id="hero">
+	<div class="slideshow" data-transition="crossfade" data-loop="true" data-skip="false">
+	 <ul class="carousel">
+		<li class="slide">
+		<img src="images/hero1.jpg" alt=""/>
+        <article id="slogan">
+        <h3>Relocate cinemas' ecosystem to the internet</h3>
+      <p>&ldquo;It always seems impossible until it&rsquo;s done.&rdquo;  Nelson Mandela&nbsp; <br>
+        Apple is a revolution;&nbsp; <br>
+        Facebook is a revolution;&nbsp; <br>
+        Spotify's also a revolution;&nbsp; <br>
+        Taobao's as well a revolution;&nbsp; <br>
+        and the next revolution IS COMING SOON.    </p>
+        </article>
+		</li>
+		<li class="slide">
+		<img src="images/hero2.jpg" alt="" />
+        <article>
+        <h2>Mission</h2>
+        <p><ul>
+        <li>To relocate film industry's ecosystem to the internet</li>
+        <li>To reduce the transaction cost that physical cinemas incurred</li>
+        </ul>
+        </p>
+        </article>
+		</li>
+		<li class="slide">
+		<img src="images/hero3.jpg" alt="" />
+        <article>
+        <h2>Problems</h2>
+        <p><ul>
+        <li>Transaction cost</li>
+        <ul>
+        <li>For those costs associated to run a cinema</li>
+        <li>Movie publishers can receive the actual amount of box office just as little as 40%; they do not reap as much as what they sow</li>
+        </ul>
+        <li>Pirated movies</li>
+        <ul>
+        <li>People nowadays go to cinemas less frequently and this impedes the box office directly, especially in Hong Kong and China</li>
+        <li>This is because the first-run movies could be downloaded very easily; or even you do not need to download but just go to video streaming website, for example Youku, LETV, etc, you can already watch a new movie without paying any fees</li>
+        <li>Therefore if I just need to wait for several weeks after the new movie released in cinemas and I can watch free, then why would I still go to cinema and pay for the tickets?</li></ul>
+        </ul></p>
+        </article>
+		</li>
+        <li class="slide">
+		<img src="images/hero4.jpg" alt="" />
+        <article>
+        <h2>Goal</h2>
+        <p><ul>
+        <li>Targeted at the whole world for the sake of placing all new movies in our platform</li>
+        <li>To weed out the physical cinemas as their existence increases a lot of transaction cost, which could otherwise raise the real income of film industry
+        </li>
+        </ul>
+        </article>
+		</li>
+	</ul></p>
+	</div>
+</div>
+  
+  
+  <div id="beyondhero">
+  <div id="referto2">
+
+  <p>
+  <h3>We are going to launch far beyond just an online cinema,<br> but to relocate the whole physical cinema’s ecosystem to the internet, to make it universally accessible and internet-oriented.
+  </h3>
+  </p>
+  
+
+  <ul>
+  <li>HKD 1</li>
+  <li>Portable cinema</li>  
+  <li>Worldwide accessibility</li>
+  <li>24/7 watching experience</li>
+  <li>Use big data to analyze audience's preference</li>
+
+
+  </ul>
+
+
+  </div>
+   
+    
+  <div id="referto2">
+  <p>
+  <h3>
+	<a href="/login">Try out in our Pilot</a>
+	<img src="images/protoImages/Proto_guide.jpg" width="200">
+  </a>
+  </h3>
+  </p>
+  </div>
+  </div>
+  
+  
+  <div id="product">
+    <article>
+      <h2>Product</h2>
+      <ul>
+        <li>We offer first-run movies in our  platform and what we are talking about is new movies being first released in our platform but not in traditional cinemas</li>
+        <li>We aimed at providing a brand new and novel movie-watching experience in a way that
+        <ul>
+        <li>first-run movie being accessible as long as connecting to the internet;</li>
+        <li>movie fare as low as $1;</li>
+        <li>payment as easy as tapping an Octopus card on cell phone</li>
+        </ul>
+        <li>And we will practice<a href="#progp" scrollto> Progressive Pricing</a></li>
+        <li>So this is fairly and squarely<a href="#comparison" scrollto> different </a>from those existing platform displaying secondhand/ DVD movies</li>
+        <li>Try out in our
+			<a href="/login">Pilot</a>
+		</li>
+      </ul>
+    </article>
+    <img src="images/brandnewproduct.jpg" alt=""/>
+    
+   	  <div id="comparison">
+      <article>
+      <h3>Comparison</h3>
+      <ul>
+        <li>Our very uniqueness is first-run movie, first-run movie and first-run movie</li>
+        <li>It's so important that I have to mention it three times!!!</li>
+      </ul>
+    </article>
+    <a href="http://ultnema.net46.net/images/Comparison_platforms.jpg" title="click to check larger one"><img src="images/Comparison_platforms.jpg" alt=""/></a>
+    </div>
+   
+    
+    
+    <div id="progp">
+    <article>
+      <h3>Progressive Pricing</h3>
+      <ul>
+        <li>If a movie has 250,000 views,<br> box office = HKD 251,500</li>
+        <li>If a movie has 20 million views,<br> box office = HKD 69,150,500
+		</li>
+      </ul>
+    </article>
+    <img src="images/Progressive pricing.jpg" alt=""/>
+  </div>
+  
+  </div>
+  
+  
+  
+  <div id="referto1">
+
+  <p>
+  <h3>People's habit is changing ever fast. The world is changing ever faster.<br>
+    This is the REVOLUTION in film industry.
+  </h3>
+  </p>
+
+  </div>
+  
+  
+    
+  <div id="works">
+    <article>
+      <h2>How It Works</h2>
+      <ul>
+        <li>When movie publishers release new movie in our platform, users/ audiences can enjoy the movie by paying $1 at the very beginning</li>
+        <li>Apart from this fees revenue, we will also derive advertising revenue. And these two are going to make up a movie's box office</li>
+        <li>And we would take part of box  office as our commission</li>
+        <li><a href="#concern" scrollto>Of course you might concern whether the online format of box office is enough to get an amount equal to or higher than the traditional box office?</a></li>      
+        </ul>
+    </article>
+    <img src="images/how it works.jpg" alt=""/>
+    
+    
+  <div id="referto2">
+
+  <p>
+  <h3><a href="#concern" scrollto>Of course you might concern whether the online format of box office is enough to get an amount equal to or higher than the traditional box office?</a>
+  </h3>
+  </p>
+
+  </div>
+    
+    
+    <div id="concern">
+    <article>
+      <h3>If traditional box office = $10 million, can online box office >= $10 million?</h3>
+      <ul>
+        <li>So this is the question about the difference between nominal box office and real box office</li>
+        <li>For the traditional format of box office, let’s say the box office is $10 million (which I treat it as nominal box office), normally the publishers or producers can take only 40-50% of the nominal box office (i.e. $5 million which I treat it as real box office)</li>
+        <li>But for our online format of box office, they can receive up to 80-90% of the nominal box office</li>
+        <li>In the long term, the online format of movie release can definitely raise the real income of film industry</li>
+      </ul>
+    </article>
+    <img src="images/NominalActual.jpg" alt=""/>
+   </div> 
+    
+  </div>
+  
+  
+    <div id="referto1">
+
+  <p>
+  <h3>This project is targeted at 3 groups of people.
+  </h3>
+  </p>
+
+  </div>
+  
+  
+  
+  
+  <div id="customers">
+   <article>
+     <h2>Customers</h2>
+     <p>Everyone who is willing to pay 1 dollar for a first-run movie.</p>
+   </article>
+<img src="images/Target audience.jpg" alt=""/>
+
+   <article>
+     <h3>Target Publishers</h3>
+     <ul>
+     <li>Focus on Hong Kong market</li>
+     <li>Focus on small-medium sized first</li>
+     </ul>
+   </article>
+<img src="images/TargetMoviePublishers.jpg" alt=""/>
+
+   <article>
+     <h3>Target Advertising Clients</h3>
+     <p>There is still a large room for attracting online advertising revenue.</p>
+   </article>
+<img src="images/TargetAdClients.jpg" alt=""/>
+
+</div>
+
+
+    <div id="referto1">
+
+  <p>
+  <h3>Our team is energetic, pragmatic, committed,<br>
+  full of faith and determination.
+  </h3>
+  </p>
+
+  </div>
+
+
+
+  <div id="team">
+ 
+   <article> 
+     <h2>Team</h2>
+     <p>Our initial team has 3 members.<br>They are Charlie, Tony and Jeffrey.</p>
+
+   </article>
+   
+   <div id="boxgrid">
+   			<div class="boxgrid slideright">
+				<img class="cover" src="images/Team_Charlie.JPG"/>
+				<h3>Qualification</h3>
+				<p>Charlie is a graduate in Bachelor of Science in Information Management at University of Hong Kong.</p>
+                <p>Tony is a graduate in Bachelor of Business Administration in Accounting at City University of Hong Kong.</p>
+                <p>Jeffrey is a graduate in Bachelor of Business Administration in Information Management at City University of Hong Kong.</p>
+			</div>
+
+            
+            <div class="boxgrid slideright">
+				<img class="cover" src="images/Team_Tony.jpg"/>
+			  <h3>Capability</h3>
+                <p>Charlie is skilled at using C++, JAVA, SQL, PHP, HTML5 and CSS, and that is to say, he can program.</p>
+                <p>Jeffrey is proficient in using social media platform to do digital marketing, and this is to say, he can sell.</p>
+                <p>Tony is a CPA in one of the BIG FOUR accounting firms, Ernst & Young, and that is to say, he is capable of showing excellent execution ability.</p>
+
+			</div>
+
+    <div class="boxgrid slideright">
+				<img class="cover" src="images/Team_Jeff.jpg"/>
+				<h3>Friendship</h3>
+				<p>By the way, the three of them had been friends for more than 10 years. They were schoolmates as well as soccer teammates.</p>
+                <p>Charlie and Jeffrey had participated in ACCA Business Case Competition and the team has been shortlisted to be one of the five finalist teams among 390 participating teams. More importantly, their ideas have been tested by the professionals and experts. This shows a good probability of launch to market.</p>
+
+			</div>
+            </div>
+
+   
+  </div>
+
+
+
+  
+  <div id="contact">
+   <article>
+     <h2>Contact</h2>
+     <p>Ultnema team<br>
+     ultnemateam@outlook.com</p>
+     <p>Hong Kong<br>
+     China</p>
+   </article>
+   <img src="images/HK view3.jpg" alt=""/> </div>
+ 
+<footer>
+<h1><a href="#top" scrollto><img src="images/Logo.png" alt="Home"/></a>
+</h1>
+<nav id="footernav">
+<a href="#product" scrollto>Product</a>
+<a href="#works" scrollto>How It Works</a>
+<a href="#customers" scrollto> Customers</a>
+<a href="#team" scrollto>Team</a>
+<a href="#contact" scrollto>Contact</a>
+     
+ <p>© Copyright <span th:text="${year}"/> Ultnema | This site is best viewed by using Chrome and Firefox.</p>
+</nav>
+</footer>
+
+<div class="scrolltop"></div>
+</div>
+</body>
+</html>

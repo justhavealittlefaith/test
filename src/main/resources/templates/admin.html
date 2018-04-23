@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Ultnema | Admin Rights</title>
+</head>
+<body id="body-color">
+
+<form method="POST" th:action="@{/admin}">
+
+<div id="Admin-rights">
+<fieldset style="width:30%"><legend>Admin Rights</legend>
+<table border="0">
+<h3>Create new table in database</h3>
+<h4>You need to drop the table before creating it</h4>
+<tr>
+<td>Create TABLE movies_info</td>
+
+<!--
+<td>Create TABLE transaction_record (triggerViewsCounter as well)</td>
+-->
+
+<td>Create TABLE website_users and
+<ul>
+<li>TABLE user_mostRecent10Records</li>
+<li>TRIGGER triggerUser10Records_from_website_users</li>
+</ul>
+</td>
+
+<td>Create TABLE prog_pricing</td>
+<td>Create TABLE login_record</td>
+<td>Create TABLE admin_users</td>
+</tr>
+
+<tr>
+<td><input id="button" type="submit" name="createMovies_info" value="Create"></td>
+<!--
+<td><input id="button" type="submit" name="createTransaction_record" value="Create"></td>
+-->
+<td><input id="button" type="submit" name="createWebsite_users" value="Create"></td>
+<td><input id="button" type="submit" name="createProg_pricing" value="Create"></td>
+<td><input id="button" type="submit" name="createLogin_record" value="Create"></td>
+<td><input id="button" type="submit" name="createAdmin_users" value="Create"></td>
+</tr>
+
+</table>
+</fieldset>
+</div>
+
+
+<div id="Admin-rights">
+<fieldset style="width:auto"><legend>Add record</legend>
+<table border="0">
+
+<td>
+<fieldset style="width:auto"><legend>Add new movies_info</legend>
+<table border="0">
+<tr>You still need to rename and move movieImage and Video to the respective files manually</tr>
+<tr><td>movieName</td><td> <input type="text" name="movieName"></td><td>Iron Man 3 2014</td></tr>
+<tr><td>movieImage</td><td> <input type="text" name="movieImage"></td><td>Proto_2014_Iron_Man_3.jpg</td></tr>
+<tr><td>movieVideo</td><td> <input type="text" name="movieVideo"></td><td>Proto_2014_Iron_Man_3.mp4</td></tr>
+<tr><td></td><td><input id="button" type="submit" name="addNewMovie" value="Add"></td>
+<td>
+The following would also be created simultaneously:
+<ul>
+<li>Transaction table of this movie</li>
+<li>triggerViewsCounter_from_(movieTranTable)</li>
+</ul>
+</td>
+</tr>
+
+<tr><td>Delete the existing movie</td></tr>
+<tr><td>movieName</td><td> <input type="text" name="movieName2del"></td><td>Iron Man 3 2014</td></tr>
+<tr><td></td><td><input id="button" type="submit" name="movieInfo2del" value="Delete"></td></tr>
+</table>
+</fieldset>
+</td>
+
+<td>
+<fieldset style="width:30%"><legend>Add new prog_pricing</legend>
+<table border="0">
+<tr><td></td><td><input id="button" type="submit" name="addProgPricing" value="Add"></td></tr>
+</table>
+</fieldset>
+</td>
+
+<td>
+<fieldset style="width:30%"><legend>Add new admin record</legend>
+<table border="0">
+<tr><td></td><td><input id="button" type="submit" name="addNewAdmin" value="Add"></td></tr>
+</table>
+</fieldset>
+</td>
+
+<td>
+<fieldset style="width:30%"><legend>Add new user record</legend>
+<table border="0">
+<tr><td></td><td><input id="button" type="submit" name="addNewUsers" value="Add"></td></tr>
+</table>
+</fieldset>
+</td>
+
+<td>
+<fieldset style="width:30%"><legend>Add new transaction record</legend>
+<table border="0">
+<tr><td></td><td><input id="button" type="submit" name="addNewTransactionRecord" value="Add"></td></tr>
+</table>
+</fieldset>
+</td>
+
+</table>
+</fieldset>
+</div>
+
+
+<div id="Admin-rights">
+<fieldset style="width:30%"><legend>Admin Rights</legend>
+<table border="0">
+<h3>Drop table in database</h3>
+<tr>
+<td>Drop all movie transaction tables and corresponding triggers(BEFORE movies_info)</td>
+<td>Drop TABLE movies_info</td>
+<!--
+<td>Drop TABLE transaction_record (triggerViewsCounter as well)</td>
+-->
+<td>Drop TABLE website_users and
+<ul>
+<li>TABLE user_mostRecent10Records</li>
+<li>TRIGGER triggerUser10Records_from_website_users</li>
+</ul>
+</td>
+
+<td>Drop TABLE prog_pricing</td>
+<td>Drop TABLE login_record</td>
+</tr>
+
+<tr>
+<td><input id="button" type="submit" name="dropMovieTranTables" value="Drop"></td>
+<td><input id="button" type="submit" name="dropMovies_info" value="Drop"></td>
+<!--
+<td><input id="button" type="submit" name="dropTransaction_record" value="Drop"></td>
+-->
+<td><input id="button" type="submit" name="dropWebsite_users" value="Drop"></td>
+<td><input id="button" type="submit" name="dropProg_pricing" value="Drop"></td>
+<td><input id="button" type="submit" name="dropLogin_record" value="Drop"></td>
+</tr>
+
+</table>
+</fieldset>
+</div>
+
+
+
+
+<div id="Admin-rights">
+<fieldset style="width:auto"><legend>show TABLES</legend>
+<table border="0">
+
+<tr><td>tableName</td><td> <input type="text" name="tableName"></td><td>e.g. movies_info, website_users, prog_pricing, user_mostRecent10Records, Proto_2017_Fifty_Shades_Darker</td></tr>
+<tr><td></td><td><input id="button" type="submit" name="showTables" value="Show"></td>
+
+</tr>
+
+</table>
+</fieldset>
+</div>
+
+
+
+<div id="Admin-rights">
+<fieldset style="width:auto"><legend>UPDATE $tableName SET $setColumnName1=? WHERE $columnName2=?</legend>
+<table border="0">
+
+<tr><td>tableName</td><td> <input type="text" name="update_tableName"></td><td>e.g. movies_info</td></tr>
+<tr><td>setColumnName1</td><td> <input type="text" name="update_setColumnName1"><td>e.g. viewsCounter</td></tr>
+<tr><td>whereColumnName2</td><td> <input type="text" name="update_ColumnName2"><td>e.g. movieNameForTran</td></tr>
+<tr><td>setColumnValue1</td><td> <input type="text" name="update_setColumnValue1"><td>e.g. 99999</td></tr>
+<tr><td>whereColumnValue2</td><td> <input type="text" name="update_ColumnValue2"><td>e.g. Proto_2014_Iron_Man_3</td></tr>
+<tr><td></td><td><input id="button" type="submit" name="updateSth" value="Update"></td>
+
+</tr>
+
+</table>
+</fieldset>
+</div>
+
+
+
+
+</body>
+</html>
