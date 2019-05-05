@@ -8,3 +8,5 @@ dorm eye face
 apple banana cat
 
 >>>>>>> refs/remotes/origin/justhavealittlefaith-patch-1
+
+adding texts from GitHub
